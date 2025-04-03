@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-scale=1.0">
+    <title>Sports Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 70%;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .question p {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .options {
+            margin: 10px 0;
+        }
+        .options input {
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        .correct-answer {
+            background-color: lightgreen;
+        }
+        .incorrect-answer {
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Sports Quiz (10 Questions)</h2>
+    <form id="quizForm">
+        <!-- Question 1 -->
+        <div class="question">
+            <p>1. Who won the FIFA World Cup in 2018?</p>
+            <div class="options">
+                <input type="radio" name="q1" value="France"> France
+                <input type="radio" name="q1" value="Germany"> Germany
+                <input type="radio" name="q1" value="Brazil"> Brazil
+                <input type="radio" name="q1" value="Argentina"> Argentina
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <p>2. How many players are there on a basketball team?</p>
+            <div class="options">
+                <input type="radio" name="q2" value="5"> 5
+                <input type="radio" name="q2" value="7"> 7
+                <input type="radio" name="q2" value="11"> 11
+                <input type="radio" name="q2" value="9"> 9
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <p>3. Who holds the record for most Olympic gold medals?</p>
+            <div class="options">
+                <input type="radio" name="q3" value="Michael Phelps"> Michael Phelps
+                <input type="radio" name="q3" value="Usain Bolt"> Usain Bolt
+                <input type="radio" name="q3" value="Larisa Latynina"> Larisa Latynina
+                <input type="radio" name="q3" value="Carl Lewis"> Carl Lewis
+            </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <p>4. Which country hosted the 2016 Summer Olympics?</p>
+            <div class="options">
+                <input type="radio" name="q4" value="Brazil"> Brazil
+                <input type="radio" name="q4" value="China"> China
+                <input type="radio" name="q4" value="United States"> United States
+                <input type="radio" name="q4" value="Australia"> Australia
+            </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <p>5. Who is known as 'The King of Tennis'?</p>
+            <div class="options">
+                <input type="radio" name="q5" value="Roger Federer"> Roger Federer
+                <input type="radio" name="q5" value="Rafael Nadal"> Rafael Nadal
+                <input type="radio" name="q5" value="Novak Djokovic"> Novak Djokovic
+                <input type="radio" name="q5" value="Andy Murray"> Andy Murray
+            </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+            <p>6. What is the maximum break in snooker?</p>
+            <div class="options">
+                <input type="radio" name="q6" value="147"> 147
+                <input type="radio" name="q6" value="100"> 100
+                <input type="radio" name="q6" value="50"> 50
+                <input type="radio" name="q6" value="200"> 200
+            </div>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question">
+            <p>7. Who won the NBA MVP award in 2020?</p>
+            <div class="options">
+                <input type="radio" name="q7" value="Giannis Antetokounmpo"> Giannis Antetokounmpo
+                <input type="radio" name="q7" value="LeBron James"> LeBron James
+                <input type="radio" name="q7" value="James Harden"> James Harden
+                <input type="radio" name="q7" value="Kawhi Leonard"> Kawhi Leonard
+            </div>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question">
+            <p>8. Who won the 2020 UEFA Champions League?</p>
+            <div class="options">
+                <input type="radio" name="q8" value="Bayern Munich"> Bayern Munich
+                <input type="radio" name="q8" value="Paris Saint-Germain"> Paris Saint-Germain
+                <input type="radio" name="q8" value="Liverpool"> Liverpool
+                <input type="radio" name="q8" value="Real Madrid"> Real Madrid
+            </div>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question">
+            <p>9. What is the name of the annual international rugby competition between England, France, Ireland, Italy, Scotland, and Wales?</p>
+            <div class="options">
+                <input type="radio" name="q9" value="Six Nations Championship"> Six Nations Championship
+                <input type="radio" name="q9" value="The Rugby Championship"> The Rugby Championship
+                <input type="radio" name="q9" value="World Cup"> World Cup
+                <input type="radio" name="q9" value="Tri Nations"> Tri Nations
+            </div>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="question">
+            <p>10. Who holds the record for most goals in a single FIFA World Cup?</p>
+            <div class="options">
+                <input type="radio" name="q10" value="Marta"> Marta
+                <input type="radio" name="q10" value="Mia Hamm"> Mia Hamm
+                <input type="radio" name="q10" value="Just Fontaine"> Just Fontaine
+                <input type="radio" name="q10" value="Pelé"> Pelé
+            </div>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Submit</button>
+    </form>
+
+    <!-- Result Section -->
+    <div id="result" class="result">
+        <h3>Your Results:</h3>
+        <p id="result1"></p>
+        <p id="result2"></p>
+        <p id="result3"></p>
+        <p id="result4"></p>
+        <p id="result5"></p>
+        <p id="result6"></p>
+        <p id="result7"></p>
+        <p id="result8"></p>
+        <p id="result9"></p>
+        <p id="result10"></p>
+    </div>
+</div>
+
+<script>
+    // Function to check answers and display results
+    function checkAnswers() {
+        var score = 0;
+        var correctAnswers = {
+            q1: "France",
+            q2: "5",
+            q3: "Michael Phelps",
+            q4: "Brazil",
+            q5: "Roger Federer",
+            q6: "147",
+            q7: "Giannis Antetokounmpo",
+            q8: "Bayern Munich",
+            q9: "Six Nations Championship",
+            q10: "Just Fontaine"
+        };
+
+        // Check answers for each question
+        for (var i = 1; i <= 10; i++) {
+            var selectedAnswer = document.querySelector(`input[name="q${i}"]:checked`);
+            var options = document.querySelectorAll(`input[name="q${i}"]`);
+            var resultText = "";
+            if (selectedAnswer) {
+                if (selectedAnswer.value === correctAnswers[`q${i}`]) {
+                    resultText = `<span class="correct">Correct: ${selectedAnswer.value}</span>`;
+                    score++;
+                    // Highlight the correct answer
+                    selectedAnswer.parentElement.classList.add("correct-answer");
+                } else {
+                    resultText = `<span class="incorrect">Incorrect: ${selectedAnswer.value}. Correct answer is ${correctAnswers[`q${i}`]}</span>`;
+                    // Highlight the incorrect answer
+                    selectedAnswer.parentElement.classList.add("incorrect-answer");
+
+                    // Highlight the correct answer
+                    for (let option of options) {
+                        if (option.value === correctAnswers[`q${i}`]) {
+                            option.parentElement.classList.add("correct-answer");
+                        }
+                    }
+                }
+            } else {
+                resultText = `<span class="incorrect">No answer selected. Correct answer is ${correctAnswers[`q${i}`]}</span>`;
+                // Highlight the correct answer
+                for (let option of options) {
+                    if (option.value === correctAnswers[`q${i}`]) {
+                        option.parentElement.classList.add("correct-answer");
+                    }
+                }
+            }
+            document.getElementById(`result${i}`).innerHTML = resultText;
+        }
+
+        // Show result section
+        document.getElementById("result").style.display = "block";
+    }
+</script>
+
+</body>
+</html>

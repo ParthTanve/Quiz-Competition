@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-scale=1.0">
+    <title>Science Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 70%;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .question p {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .options {
+            margin: 10px 0;
+        }
+        .options label {
+            display: block;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .options input {
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        .option.correct {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .option.incorrect {
+            background-color: #f44336;
+            color: white;
+        }
+        .option.no-answer {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Science Quiz (10 Questions)</h2>
+    <form id="quizForm">
+        <!-- Question 1 -->
+        <div class="question">
+            <p>1. What is the chemical symbol for water?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q1" value="H2O"> H2O
+                </label>
+                <label class="option">
+                    <input type="radio" name="q1" value="CO2"> CO2
+                </label>
+                <label class="option">
+                    <input type="radio" name="q1" value="O2"> O2
+                </label>
+                <label class="option">
+                    <input type="radio" name="q1" value="NaCl"> NaCl
+                </label>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <p>2. Who developed the theory of relativity?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q2" value="Albert Einstein"> Albert Einstein
+                </label>
+                <label class="option">
+                    <input type="radio" name="q2" value="Isaac Newton"> Isaac Newton
+                </label>
+                <label class="option">
+                    <input type="radio" name="q2" value="Galileo Galilei"> Galileo Galilei
+                </label>
+                <label class="option">
+                    <input type="radio" name="q2" value="Nikola Tesla"> Nikola Tesla
+                </label>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <p>3. What is the powerhouse of the cell?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q3" value="Mitochondria"> Mitochondria
+                </label>
+                <label class="option">
+                    <input type="radio" name="q3" value="Nucleus"> Nucleus
+                </label>
+                <label class="option">
+                    <input type="radio" name="q3" value="Ribosomes"> Ribosomes
+                </label>
+                <label class="option">
+                    <input type="radio" name="q3" value="Endoplasmic Reticulum"> Endoplasmic Reticulum
+                </label>
+            </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <p>4. Which element is most abundant in the Earth's atmosphere?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q4" value="Nitrogen"> Nitrogen
+                </label>
+                <label class="option">
+                    <input type="radio" name="q4" value="Oxygen"> Oxygen
+                </label>
+                <label class="option">
+                    <input type="radio" name="q4" value="Carbon Dioxide"> Carbon Dioxide
+                </label>
+                <label class="option">
+                    <input type="radio" name="q4" value="Helium"> Helium
+                </label>
+            </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <p>5. Which planet is known as the Red Planet?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q5" value="Mars"> Mars
+                </label>
+                <label class="option">
+                    <input type="radio" name="q5" value="Jupiter"> Jupiter
+                </label>
+                <label class="option">
+                    <input type="radio" name="q5" value="Venus"> Venus
+                </label>
+                <label class="option">
+                    <input type="radio" name="q5" value="Saturn"> Saturn
+                </label>
+            </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+            <p>6. What is the closest star to Earth?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q6" value="Sun"> Sun
+                </label>
+                <label class="option">
+                    <input type="radio" name="q6" value="Alpha Centauri"> Alpha Centauri
+                </label>
+                <label class="option">
+                    <input type="radio" name="q6" value="Betelgeuse"> Betelgeuse
+                </label>
+                <label class="option">
+                    <input type="radio" name="q6" value="Sirius"> Sirius
+                </label>
+            </div>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question">
+            <p>7. What is the chemical symbol for oxygen?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q7" value="O2"> O2
+                </label>
+                <label class="option">
+                    <input type="radio" name="q7" value="O"> O
+                </label>
+                <label class="option">
+                    <input type="radio" name="q7" value="CO2"> CO2
+                </label>
+                <label class="option">
+                    <input type="radio" name="q7" value="O3"> O3
+                </label>
+            </div>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question">
+            <p>8. Who formulated the laws of motion and universal gravitation?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q8" value="Isaac Newton"> Isaac Newton
+                </label>
+                <label class="option">
+                    <input type="radio" name="q8" value="Albert Einstein"> Albert Einstein
+                </label>
+                <label class="option">
+                    <input type="radio" name="q8" value="Galileo Galilei"> Galileo Galilei
+                </label>
+                <label class="option">
+                    <input type="radio" name="q8" value="Niels Bohr"> Niels Bohr
+                </label>
+            </div>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question">
+            <p>9. What gas do plants absorb from the atmosphere for photosynthesis?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q9" value="Carbon Dioxide"> Carbon Dioxide
+                </label>
+                <label class="option">
+                    <input type="radio" name="q9" value="Oxygen"> Oxygen
+                </label>
+                <label class="option">
+                    <input type="radio" name="q9" value="Nitrogen"> Nitrogen
+                </label>
+                <label class="option">
+                    <input type="radio" name="q9" value="Helium"> Helium
+                </label>
+            </div>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="question">
+            <p>10. At what temperature does water boil at sea level?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q10" value="100°C"> 100°C
+                </label>
+                <label class="option">
+                    <input type="radio" name="q10" value="90°C"> 90°C
+                </label>
+                <label class="option">
+                    <input type="radio" name="q10" value="110°C"> 110°C
+                </label>
+                <label class="option">
+                    <input type="radio" name="q10" value="120°C"> 120°C
+                </label>
+            </div>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Submit</button>
+    </form>
+
+    <!-- Result Section -->
+    <div id="result" class="result">
+        <h3>Your Results:</h3>
+        <p id="result1"></p>
+        <p id="result2"></p>
+        <p id="result3"></p>
+        <p id="result4"></p>
+        <p id="result5"></p>
+        <p id="result6"></p>
+        <p id="result7"></p>
+        <p id="result8"></p>
+        <p id="result9"></p>
+        <p id="result10"></p>
+    </div>
+</div>
+
+<script>
+    // Function to check answers and display results
+    function checkAnswers() {
+        var score = 0;
+        var correctAnswers = {
+            q1: "H2O",
+            q2: "Albert Einstein",
+            q3: "Mitochondria",
+            q4: "Nitrogen",
+            q5: "Mars",
+            q6: "Sun",
+            q7: "O2",
+            q8: "Isaac Newton",
+            q9: "Carbon Dioxide",
+            q10: "100°C"
+        };
+
+        // Check answers for each question
+        for (var i = 1; i <= 10; i++) {
+            var selectedAnswer = document.querySelector(`input[name="q${i}"]:checked`);
+            var options = document.querySelectorAll(`input[name="q${i}"]`);
+            
+            // Loop through the options to add the correct or incorrect class
+            options.forEach(option => {
+                let label = option.closest("label");
+                if (option.value === correctAnswers[`q${i}`]) {
+                    if (option.checked) {
+                        label.classList.add('correct');
+                    }
+                } else if (option.checked) {
+                    label.classList.add('incorrect');
+                } else {
+                    label.classList.add('no-answer');
+                }
+            });
+
+            var resultText = "";
+            if (selectedAnswer) {
+                if (selectedAnswer.value === correctAnswers[`q${i}`]) {
+                    resultText = `<span class="correct">Correct: ${selectedAnswer.value}</span>`;
+                    score++;
+                } else {
+                    resultText = `<span class="incorrect">Incorrect: ${selectedAnswer.value}. Correct answer is ${correctAnswers[`q${i}`]}</span>`;
+                }
+            } else {
+                resultText = `<span class="incorrect">No answer selected. Correct answer is ${correctAnswers[`q${i}`]}</span>`;
+            }
+            document.getElementById(`result${i}`).innerHTML = resultText;
+        }
+
+        // Show result section
+        document.getElementById("result").style.display = "block";
+    }
+</script>
+
+</body>
+</html>
