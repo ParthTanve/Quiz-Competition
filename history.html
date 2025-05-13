@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-scale=1.0">
+    <title>History Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 70%;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .question p {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .options {
+            margin: 10px 0;
+        }
+        .options input {
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        .correct-answer {
+            background-color: #4caf50; /* Green */
+        }
+        .incorrect-answer {
+            background-color: #f44336; /* Red */
+        }
+        .no-answer {
+            background-color: #ffeb3b; /* Yellow */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>History Quiz (10 Questions)</h2>
+    <form id="quizForm">
+        <!-- Question 1 -->
+        <div class="question">
+            <p>1. Who was the first president of the United States?</p>
+            <div class="options">
+                <input type="radio" name="q1" value="George Washington"> George Washington
+                <input type="radio" name="q1" value="Thomas Jefferson"> Thomas Jefferson
+                <input type="radio" name="q1" value="Abraham Lincoln"> Abraham Lincoln
+                <input type="radio" name="q1" value="Andrew Jackson"> Andrew Jackson
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <p>2. What year did World War II end?</p>
+            <div class="options">
+                <input type="radio" name="q2" value="1945"> 1945
+                <input type="radio" name="q2" value="1944"> 1944
+                <input type="radio" name="q2" value="1950"> 1950
+                <input type="radio" name="q2" value="1939"> 1939
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <p>3. Who was the leader of the Soviet Union during the Cuban Missile Crisis?</p>
+            <div class="options">
+                <input type="radio" name="q3" value="Nikita Khrushchev"> Nikita Khrushchev
+                <input type="radio" name="q3" value="Joseph Stalin"> Joseph Stalin
+                <input type="radio" name="q3" value="Mikhail Gorbachev"> Mikhail Gorbachev
+                <input type="radio" name="q3" value="Leon Trotsky"> Leon Trotsky
+            </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <p>4. Who was the first man to walk on the Moon?</p>
+            <div class="options">
+                <input type="radio" name="q4" value="Neil Armstrong"> Neil Armstrong
+                <input type="radio" name="q4" value="Buzz Aldrin"> Buzz Aldrin
+                <input type="radio" name="q4" value="Yuri Gagarin"> Yuri Gagarin
+                <input type="radio" name="q4" value="Alan Shepard"> Alan Shepard
+            </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <p>5. What ancient civilization built the pyramids of Giza?</p>
+            <div class="options">
+                <input type="radio" name="q5" value="Romans"> Romans
+                <input type="radio" name="q5" value="Greeks"> Greeks
+                <input type="radio" name="q5" value="Egyptians"> Egyptians
+                <input type="radio" name="q5" value="Persians"> Persians
+            </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+            <p>6. In which country did the Industrial Revolution begin?</p>
+            <div class="options">
+                <input type="radio" name="q6" value="Germany"> Germany
+                <input type="radio" name="q6" value="France"> France
+                <input type="radio" name="q6" value="England"> England
+                <input type="radio" name="q6" value="United States"> United States
+            </div>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question">
+            <p>7. Who was the first emperor of China?</p>
+            <div class="options">
+                <input type="radio" name="q7" value="Qin Shi Huang"> Qin Shi Huang
+                <input type="radio" name="q7" value="Han Wudi"> Han Wudi
+                <input type="radio" name="q7" value="Tang Taizong"> Tang Taizong
+                <input type="radio" name="q7" value="Kangxi Emperor"> Kangxi Emperor
+            </div>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question">
+            <p>8. The Berlin Wall fell in which year?</p>
+            <div class="options">
+                <input type="radio" name="q8" value="1989"> 1989
+                <input type="radio" name="q8" value="1991"> 1991
+                <input type="radio" name="q8" value="1985"> 1985
+                <input type="radio" name="q8" value="1975"> 1975
+            </div>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question">
+            <p>9. Who was the famous queen of ancient Egypt?</p>
+            <div class="options">
+                <input type="radio" name="q9" value="Cleopatra"> Cleopatra
+                <input type="radio" name="q9" value="Nefertiti"> Nefertiti
+                <input type="radio" name="q9" value="Hatshepsut"> Hatshepsut
+                <input type="radio" name="q9" value="Isis"> Isis
+            </div>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="question">
+            <p>10. Who was the leader of the Nazi Party during World War II?</p>
+            <div class="options">
+                <input type="radio" name="q10" value="Adolf Hitler"> Adolf Hitler
+                <input type="radio" name="q10" value="Benito Mussolini"> Benito Mussolini
+                <input type="radio" name="q10" value="Joseph Stalin"> Joseph Stalin
+                <input type="radio" name="q10" value="Winston Churchill"> Winston Churchill
+            </div>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Submit</button>
+    </form>
+
+    <!-- Result Section -->
+    <div id="result" class="result">
+        <h3>Your Results:</h3>
+        <p id="result1"></p>
+        <p id="result2"></p>
+        <p id="result3"></p>
+        <p id="result4"></p>
+        <p id="result5"></p>
+        <p id="result6"></p>
+        <p id="result7"></p>
+        <p id="result8"></p>
+        <p id="result9"></p>
+        <p id="result10"></p>
+    </div>
+</div>
+
+<script>
+    // Function to check answers and display results
+    function checkAnswers() {
+        var score = 0;
+        var correctAnswers = {
+            q1: "George Washington",
+            q2: "1945",
+            q3: "Nikita Khrushchev",
+            q4: "Neil Armstrong",
+            q5: "Egyptians",
+            q6: "England",
+            q7: "Qin Shi Huang",
+            q8: "1989",
+            q9: "Cleopatra",
+            q10: "Adolf Hitler"
+        };
+
+        // Check answers for each question
+        for (var i = 1; i <= 10; i++) {
+            var selectedAnswer = document.querySelector(`input[name="q${i}"]:checked`);
+            var options = document.getElementsByName(`q${i}`);
+            var resultText = "";
+
+            // Reset all options background color
+            options.forEach(function(option) {
+                option.parentElement.classList.remove("correct-answer", "incorrect-answer", "no-answer");
+            });
+
+            if (selectedAnswer) {
+                if (selectedAnswer.value === correctAnswers[`q${i}`]) {
+                    resultText = `<span class="correct">Correct: ${selectedAnswer.value}</span>`;
+                    score++;
+                    selectedAnswer.parentElement.classList.add("correct-answer");
+                } else {
+                    resultText = `<span class="incorrect">Incorrect: ${selectedAnswer.value}. Correct answer is ${correctAnswers[`q${i}`]}</span>`;
+                    selectedAnswer.parentElement.classList.add("incorrect-answer");
+                }
+            } else {
+                resultText = `<span class="incorrect">No answer selected. Correct answer is ${correctAnswers[`q${i}`]}</span>`;
+                options.forEach(function(option) {
+                    option.parentElement.classList.add("no-answer");
+                });
+            }
+
+            document.getElementById(`result${i}`).innerHTML = resultText;
+        }
+
+        // Show result section
+        document.getElementById("result").style.display = "block";
+    }
+</script>
+<button type="button" onclick="window.location.href='index.html'">Exit</button>
+
+</body>
+</html>
